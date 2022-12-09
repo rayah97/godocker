@@ -25,7 +25,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/clockbox:latest
-  test:
-      runs-on: ubuntu-latest
-      steps:
-          run go test ./...
+
+      - name: Test
+          go test ./...
