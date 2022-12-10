@@ -2,13 +2,13 @@ name: Let's Build and Deploy Go with Docker
 
 
 on:
- workflow_dispatch:
+  workflow_dispatch:
     inputs:
-       
       dockerimage-name:
           description: 'Docker Image Name '
           required: true
           type: string
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,7 +28,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{dockerimage-name}}:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{inputs.dockerimage-name}}:latest
 
 
      
