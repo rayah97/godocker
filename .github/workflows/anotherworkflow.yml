@@ -1,22 +1,28 @@
-name: Pull and Run Docker Image
+name: Pull and Build Docker Image
+
 on:
   workflow_dispatch:
     inputs:
-      docker-registry:
-          description: 'DockerHub Image Repo '
-          required: true
+       
+      dockerimage-registry:
+          description: 'Image Registry '
+          required: false
           type: string
-          
+       
       docker-image:
-          description: 'DockerHub Image Name '
+          description: 'Docker Image Name '
           required: true
           type: string
     
        
 jobs:
-  buildandpull:
-     - name: Docker Buildx Pull or Build
-       uses: djbender/docker-buildx-pull-or-build@v0.3
-       with:
-          docker_registry: ${{inputs.docker-registry}}
-          image: ${{inputs.docker-image}}
+  pull-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker Buildx Pull and Build
+        uses: djbender/docker-buildx-pull-or-build@v0.3
+        with:
+            docker_username: ${{ secrets.DOCKER_HUB_USERNAME }}
+            docker_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+            docker_registry: ${{ inputs.docker-registry }}
+            image: ${{inputs.docker-image}}
