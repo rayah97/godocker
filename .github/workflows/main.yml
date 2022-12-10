@@ -28,10 +28,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-<<<<<<< HEAD
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{dockerimage-name}}:latest
-=======
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/go-docker-image:latest
->>>>>>> 5153dde63b283ea1dd4bf6affdbaa58303fec968
+
 
      
