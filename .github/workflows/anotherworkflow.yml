@@ -1,0 +1,22 @@
+name: Pull and Run Docker Image
+on:
+  workflow_dispatch:
+    inputs:
+      docker-registry:
+          description: 'DockerHub Image Repo '
+          required: true
+          type: string
+          
+      docker-image:
+          description: 'DockerHub Image Name '
+          required: true
+          type: string
+    
+       
+jobs:
+  buildandpull:
+     - name: Docker Buildx Pull or Build
+       uses: djbender/docker-buildx-pull-or-build@v0.3
+       with:
+          docker_registry: ${{inputs.docker-registry}}
+          image: ${{inputs.docker-image}}
