@@ -13,13 +13,17 @@ on:
     
        
 jobs:
-  pull-and-build:
+   pull-and-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Docker Buildx Pull and Run
+      - name: Docker Pull 
         run: |
               docker pull ${{inputs.docker-image}}
               docker run  ${{inputs.docker-image}}
+              
+      - name: Run Docker Image 
+        run: |
+              docker run ${{inputs.docker-image}}
         
         
 
