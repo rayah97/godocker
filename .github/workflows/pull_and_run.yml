@@ -17,12 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Docker Buildx Pull and Run
-        uses: mosteo-actions/docker-run@v1
-        with:
-           image: ${{ inputs.docker-image }}
-           command: uname -a  
+        run: |
+              docker pull ${{inputs.docker-image}}
+              docker run  ${{inputs.docker-image}}
         
-       
+        
+
 
 
 
