@@ -19,7 +19,7 @@ jobs:
       - name: Docker Pull 
         run: |
               docker pull ${{inputs.docker-image}}
-              docker run  ${{inputs.docker-image}}
+
               
       - name: Run Docker Image 
         run: |
