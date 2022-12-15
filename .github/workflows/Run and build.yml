@@ -21,7 +21,10 @@ jobs:
   pull-and-build:
     runs-on: ubuntu-latest
     steps:
-        - uses: mosteo-actions/docker-run@v1
-          with:
-             image: ${{ inputs.docker-image }}
-             command: uname -a
+     
+     - run : docker pull ${{inputs.docker-image}}
+
+     - uses: mosteo-actions/docker-run@v1
+       with:
+         image: ${{ inputs.docker-image }}
+         command: uname -a
