@@ -25,4 +25,5 @@ jobs:
             docker_username: ${{ secrets.DOCKER_HUB_USERNAME }}
             docker_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
             docker_registry: ${{ inputs.docker-registry }}
+            dockerfile: filefordocker.Dockerfile
             image: ${{inputs.docker-image}}
