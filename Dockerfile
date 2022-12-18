@@ -1,5 +1,4 @@
-FROM golang:${GO_VERSION}
-ARG GO_VERSION
+FROM golang:1.16-alpine
 WORKDIR /app
 COPY go.mod .
 COPY go.sum .
