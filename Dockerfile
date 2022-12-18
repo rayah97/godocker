@@ -1,6 +1,6 @@
 
 FROM golang:${GO_VERSION}
-ARG GO_VERSION
+ARG GO_VERSIO =1.16
 WORKDIR /app
 COPY go.mod .
 COPY go.sum .
