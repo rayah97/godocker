@@ -9,7 +9,7 @@ on:
           type: string
 
 jobs:
- build:
+  build:
      strategy:
       matrix:
         os: [ ubuntu-20.04 , ubuntu-18.04]
@@ -25,10 +25,10 @@ jobs:
         name: Build & push Docker image
         with:
           registry: docker.io
-          image: ${{ secrets.DOCKER_USERNAME }}/${{inputs.dockerimage-name}}
+          image: ${{ secrets.DOCKER_HUB_USERNAME }}/${{inputs.dockerimage-name}}
           dockerfile: ./Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           tags: latest 
           buildArgs: GO_VERSION = "1.16"
 
