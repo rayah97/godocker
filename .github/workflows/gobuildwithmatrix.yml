@@ -33,7 +33,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./Dockerfile
+          file: filefordocker./Dockerfile
           push: true
           build-args: ${{matrix.go-version}}
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{inputs.dockerimage-name}}:latest
