@@ -1,6 +1,4 @@
 name: Let's Build Go with Docker ( matrix strategy)
-
-
 on:
   workflow_dispatch:
     inputs:
@@ -8,7 +6,6 @@ on:
           description: 'Docker Image Name '
           required: true
           type: string
-
 jobs:
   build:
      strategy:
@@ -38,7 +35,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          build-args: GO_VERSION = "1.16" 
+          build-args: "GO_VERSION = 1.16"
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{inputs.dockerimage-name}}:latest
 
 
