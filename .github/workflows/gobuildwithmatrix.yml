@@ -38,7 +38,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          build-args: GO_VERSION = ${{matrix.go-version}}
+          build-args: GO_VERSION = 1.16
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{inputs.dockerimage-name}}:latest
 
 
