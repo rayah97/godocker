@@ -1,4 +1,4 @@
-FROM golang:${GO_VERSION}
+FROM golang:1.16
 ARG GO_VERSION 
 WORKDIR /app
 COPY go.mod .
