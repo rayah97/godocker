@@ -1,5 +1,5 @@
-FROM golang:${GO_VERSION}
 ARG GO_VERSION 
+FROM golang:${GO_VERSION}
 WORKDIR /app
 COPY go.mod .
 COPY go.sum .
