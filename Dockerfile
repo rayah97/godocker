@@ -1,4 +1,4 @@
-ARG GO_VERSION=1.16 
+ARG GO_VERSION
 FROM golang:${GO_VERSION}
 WORKDIR /app
 COPY go.mod .
