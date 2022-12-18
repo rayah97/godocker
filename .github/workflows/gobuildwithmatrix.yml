@@ -13,8 +13,8 @@ jobs:
  build:
      strategy:
       matrix:
-        os: [ubuntu-22.04, ubuntu-20.04]
-        image_tag: [1.0, 2.0, 3.0]
+        os: [ ubuntu-20.04]
+        image_tag: [1.0, 2.0]
      runs-on: ${{ matrix.os }}]
        
 
